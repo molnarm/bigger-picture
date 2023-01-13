@@ -37,8 +37,6 @@
 	/** if true, adds class to .bp-wrap to avoid image cropping */
 	let closingWhileZoomed
 
-	const naturalWidth = +activeItem.width
-
 	/** store positions for drag inertia */
 	const dragPositions = []
 
@@ -118,6 +116,7 @@
 			return
 		}
 
+		const naturalWidth = +activeItem.width
 		const maxWidth = calculatedDimensions[0] * maxZoom
 
 		const [currentImageWidth, currentImageHeight] = $imageDimensions
