@@ -199,7 +199,7 @@
 			image.sizes = opts.sizes || `${calculateDimensions(item)[0]}px`
 			image.srcset = item.img
 			item.preload = true
-			image.addEventListener('load',() => {
+			listen(image, 'load', () => {
 				item.width = image.width
 				item.height = image.height
 				resizeFunc?.()

@@ -64,6 +64,11 @@
 		appendToVideo('source', activeItem.sources)
 		appendToVideo('track', activeItem.tracks || [])
 		listen(mediaElement, 'canplay', () => (loaded = true))
+		listen(mediaElement, 'loadeddata', () => {
+			activeItem.width = mediaElement.videoWidth
+			activeItem.height = mediaElement.videoHeight
+			setDimensions()
+		})
 		append(node, mediaElement)
 	}
 </script>
